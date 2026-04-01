@@ -26,8 +26,8 @@ class _MainAppState extends State<MainApp> {
       bitola220 = (2 * corrente * distancia) / 510.4;
 
       resultado =
-          "Bitola 110V: ${bitola110.toStringAsFixed(2)} mm²\n"
-          "Bitola 220V: ${bitola220.toStringAsFixed(2)} mm²";
+          " A bitola recomendada para Tensão 110V é: ${bitola110.toStringAsFixed(2)} mm²\n"
+          " A bitola recomendada para Tensão 220V é: ${bitola220.toStringAsFixed(2)} mm²";
     });
 
     showDialog(
@@ -88,7 +88,7 @@ class _MainAppState extends State<MainApp> {
 
                 TextField(
                   decoration: const InputDecoration(
-                    labelText: "Corrente (A)",
+                    hintText: "Corrente (A)",
                     border: OutlineInputBorder(),
                   ),
                   keyboardType: TextInputType.number,
@@ -109,7 +109,10 @@ class _MainAppState extends State<MainApp> {
 
                 const SizedBox(height: 20),
 
-                Text(resultado),
+                Text(
+                  "A bitola recomendada para Tensão 110V é: ${bitola110.toStringAsFixed(2)} mm²\n"
+                  "A bitola recomendada para Tensão 220V é: ${bitola220.toStringAsFixed(2)} mm²",
+                ),
               ],
             ),
           ),
